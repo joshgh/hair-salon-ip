@@ -13,7 +13,7 @@
             //Arrange
             $test_stylist = new Stylist("Sandra");
             //Act
-            $result = $test_stylist->getId();
+            $result = $test_stylist->getName();
             //Assert
             $this->assertEquals("Sandra", $result);
         }
