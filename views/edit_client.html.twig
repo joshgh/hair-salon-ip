@@ -5,6 +5,10 @@
         <title>Hair Salon</title>
     </head>
     <body>
+        <p> <a href='/'>Home</a> &gt;
+            <a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}<a> &gt;
+            {{ client.getName }}
+        </p>
         <h1>Hair Salon</h1>
         <h2>Edit Client</h2>
         <h2>{{ client.getName }}</h2>
@@ -13,6 +17,10 @@
             <label for='name'>New Name:</label>
             <input type='text' id='name' name='name'>
             <button type='submit'>Update</button>
+        </form>
+        <form action='/client/{{ client.getId }}' method='post'>
+            <input name="_method" type="hidden" value="delete">
+            <button type='submit'>Remove This Client</button>
         </form>
     </body>
 </html>
