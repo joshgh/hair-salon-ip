@@ -53,5 +53,17 @@
         {
             $GLOBALS['DB']->exec("DELETE FROM stylists;");
         }
+
+        static function find($id)
+        {
+            $found_stylist = null;
+            $stylists = Stylist::getAll();
+            foreach ($stylists as $stylist){
+                if ($stylist->getId() == $id){
+                    $found_stylist = $stylist;
+                }
+            }
+            return $found_stylist;
+        }
     }
 ?>
