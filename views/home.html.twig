@@ -10,7 +10,7 @@
             <h3>All Stylists</h3>
             <ul>
                 {% for stylist in stylists %}
-                    <li>{{ stylist.getName }}</li>
+                    <li><a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}

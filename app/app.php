@@ -3,6 +3,7 @@
 
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Stylist.php";
+    require_once __DIR__."/../src/Client.php";
 
     $server = 'mysql:host=localhost;dbname=hair_salon';
     $username = 'root';
@@ -30,6 +31,22 @@
     $app->delete("/", function() use ($app) {
         Stylist::deleteAll();
         return $app['twig']->render("home.html.twig", array('stylists' => Stylist::getAll()));
+    });
+
+    $app->get("stylist/{id}", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        $clients = $stylist->findClients();
+        return $app['twig']->render("stylist.html.twig", array('stylist' => $stylist, 'clients' => $clients));
+    });
+
+    $app->post("stylist/{id}", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        $name = $_POST['name'];
+        $stylist_id = $id;
+        $new_client = new Client($name, $stylist_id);
+        $new_client->save();
+        $clients = $stylist->findClients();
+        return $app['twig']->render("stylist.html.twig", array('stylist' => $stylist, 'clients' => $clients));
     });
 
     return $app;
