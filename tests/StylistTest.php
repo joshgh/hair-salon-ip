@@ -49,5 +49,16 @@
 
             $this->assertEquals($test_stylist1, $result);
         }
+
+        function testUpdate()
+        {
+            $test_stylist = new Stylist("Sandra");
+            $test_stylist->save();
+            $test_stylist->update("Rita");
+
+            $result = Stylist::find($test_stylist->getId());
+
+            $this->assertEquals("Rita", $test_stylist->getName());
+        }
     }
 ?>
