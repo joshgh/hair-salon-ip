@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hair Salon</title>
+    </head>
+    <body>
+        <h1>Hair Salon</h1>
+        {% if stylists is not empty %}
+            <h3>All Stylists</h3>
+            <ul>
+                {% for stylist in stylists %}
+                    <li>{{ stylist.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>
