@@ -14,6 +14,11 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+        protected function teardown()
+        {
+            Stylist::deleteAll();
+        }
+
         function testGetName()
         {
             $test_stylist = new Stylist("Sandra");
