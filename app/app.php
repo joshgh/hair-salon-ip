@@ -27,5 +27,10 @@
         return $app['twig']->render("home.html.twig", array('stylists' => Stylist::getAll()));
     });
 
+    $app->delete("/", function() use ($app) {
+        Stylist::deleteAll();
+        return $app['twig']->render("home.html.twig", array('stylists' => Stylist::getAll()));
+    });
+
     return $app;
 ?>
