@@ -37,5 +37,17 @@
 
             $this->assertEquals($test_stylist, $result[0]);
         }
+
+        function testFind()
+        {
+            $test_stylist1 = new Stylist("Sandra");
+            $test_stylist1->save();
+            $test_stylist2 = new Stylist("Becky");
+            $test_stylist2->save();
+
+            $result = Stylist::find($test_stylist1->getId());
+
+            $this->assertEquals($test_stylist1, $result);
+        }
     }
 ?>

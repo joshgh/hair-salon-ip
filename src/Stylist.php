@@ -15,6 +15,21 @@
             return $this->name;
         }
 
+        function setName($name)
+        {
+            $this->name = $name;
+        }
+
+        function getId()
+        {
+            return $this->id;
+        }
+
+        function setId()
+        {
+            $this->id = $id;
+        }
+
         function save()
         {
             $GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->getName()}');");
