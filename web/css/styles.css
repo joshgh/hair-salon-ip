@@ -24,7 +24,7 @@ h1 {
 
 ul {
   list-style-type: none;
-  padding: 0;
+  padding-left: 5px;
 }
 
 form {
@@ -37,4 +37,16 @@ label {
 
 li {
   font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #0d75f8;
+}
+
+.btn-success {
+  background-color: #5edc1f;
+}
+
+.btn-danger {
+  background-color: #f7022a;
 }

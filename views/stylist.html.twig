@@ -14,6 +14,7 @@
             <h2>{{ stylist.getName }}</h2>
             {% if clients is not empty %}
             <h3>Clients:</h3>
+            <p>(Click to Edit)</p>
             <ul>
                 {% for client in clients %}
                     <li><a href='/client/edit/{{ client.getId }}'>{{ client.getName }}</a></li>
