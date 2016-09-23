@@ -11,7 +11,7 @@
         <h3>Clients:</h3>
         <ul>
             {% for client in clients %}
-                <li>{{ client.getName }}</li>
+                <li><a href='/client/edit/{{ client.getId }}'>{{ client.getName }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
