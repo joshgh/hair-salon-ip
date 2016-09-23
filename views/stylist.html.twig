@@ -11,9 +11,9 @@
         <div class='breadcrumbs'><a href='/'>Home</a> &gt; {{ stylist.getName }}</div>
         <div class='container'>
             <h1>Hair Salon</h1>
-            <h2>{{ stylist.getName }}</h2>
+            <h2>{{ stylist.getName }} (Stylist)</h2>
             {% if clients is not empty %}
-            <h3>Clients:</h3>
+            <h3>Clients</h3>
             <p>(Click to Edit)</p>
             <ul>
                 {% for client in clients %}
@@ -22,7 +22,7 @@
             </ul>
             {% endif %}
             <form action='/stylist/{{ stylist.getId }}' method='post'>
-                <h3>Add a New Client</h3>
+                <h4>Add a New Client</h4>
                 <label for='name'>Clients's Name:</label>
                 <input type='text' id='name' name='name'>
                 <button type='submit' class='btn btn-success'>Add</button>

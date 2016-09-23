@@ -11,7 +11,7 @@
         <div class='container'>
             <h1>Hair Salon</h1>
             {% if stylists is not empty %}
-                <h3>All Stylists</h3>
+                <h3>Stylists</h3>
                 <ul>
                     {% for stylist in stylists %}
                         <li><a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>
@@ -23,7 +23,7 @@
                 </form>
             {% endif %}
             <form action='/' method='post'>
-                <h3>Add a New Stylist</h3>
+                <h4>Add a New Stylist</h4>
                 <label for='name'>Stylist's Name:</label>
                 <input type='text' id='name' name='name'>
                 <button type='submit' class='btn btn-success'>Add</button>
