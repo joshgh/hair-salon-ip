@@ -17,26 +17,27 @@ _This web app allows a user to create a list of stylists at a hair salon and add
 * Visit localhost:8000 on your web browswer
 
 ## Database Setup
-  ### If unable to import database run the following SQL commands to recreate database
+If unable to import database run the following SQL commands to recreate database
 
   * CREATE DATABASE hair_salon;
   * USE hair_salon;
   * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
   * CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
+
   Then copy hair_salon structure to hair_salon_test
 
 ## Specifications
-  |Behavior|Input|Output|
-  |----|----|----|
-  |create a new Stylist|Sandra|Sandra|
-  |delete a Stylist|Sandra||
-  |list all stylists|Stylists|Sandra, Becky|
-  |delete all stylists|Delete Stylists||
-  |create a new Client|Jim|Jim|
-  |delete a Client|Jim||
-  |associate a client with a stylist|Jim to Sandra|Sandra:Jim|
-  |list all clients for a stylist|Sandra|Jim, Bill|
-  |delete all clients|Delete Clients||
+  Behavior|Input|Output
+  --------|-----|------
+  create a new Stylist|Sandra|Sandra
+  delete a Stylist|Sandra|0
+  list all stylists|Stylists|Sandra, Becky
+  delete all stylists|Delete Stylists|0
+  create a new Client|Jim|Jim
+  delete a Client|Jim|0
+  associate a client with a stylist|Jim to Sandra|Sandra:Jim
+  list all clients for a stylist|Sandra|Jim, Bill
+  delete all clients|Delete Clients|0
 
 
 ## Known Bugs
