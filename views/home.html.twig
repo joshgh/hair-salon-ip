@@ -2,27 +2,32 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <title>Hair Salon</title>
     </head>
     <body>
-        <h1>Hair Salon</h1>
-        {% if stylists is not empty %}
-            <h3>All Stylists</h3>
-            <ul>
-                {% for stylist in stylists %}
-                    <li><a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        <form action='/' method='post'>
-            <h3>Add a New Stylist</h3>
-            <label for='name'>Stylist's Name:</label>
-            <input type='text' id='name' name='name'>
-            <button type='submit'>Add</button>
-        </form>
-        <form action='/' method='post'>
-            <input name="_method" type="hidden" value="delete">
-            <button type='submit'>Remove All</button>
-        </form>
+        <div class='container'>
+            <h1>Hair Salon</h1>
+            {% if stylists is not empty %}
+                <h3>All Stylists</h3>
+                <ul>
+                    {% for stylist in stylists %}
+                        <li><a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>
+                    {% endfor %}
+                </ul>
+                <form action='/' method='post'>
+                    <input name="_method" type="hidden" value="delete">
+                    <button type='submit' class='btn btn-danger'>Remove All</button>
+                </form>
+            {% endif %}
+            <form action='/' method='post'>
+                <h3>Add a New Stylist</h3>
+                <label for='name'>Stylist's Name:</label>
+                <input type='text' id='name' name='name'>
+                <button type='submit' class='btn btn-success'>Add</button>
+            </form>
+
+        </div>
     </body>
 </html>

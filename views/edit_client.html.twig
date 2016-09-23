@@ -2,25 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <title>Hair Salon</title>
     </head>
     <body>
-        <p> <a href='/'>Home</a> &gt;
-            <a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}<a> &gt;
+        <div class='breadcrumbs'>
+            <a href='/'>Home</a> &gt;
+            <a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a> &gt;
             {{ client.getName }}
-        </p>
-        <h1>Hair Salon</h1>
-        <h2>Edit Client</h2>
-        <h2>{{ client.getName }}</h2>
-        <form action='/client/{{ client.getId }}' method='post'>
-            <input name="_method" type="hidden" value="patch">
-            <label for='name'>New Name:</label>
-            <input type='text' id='name' name='name'>
-            <button type='submit'>Update</button>
-        </form>
-        <form action='/client/{{ client.getId }}' method='post'>
-            <input name="_method" type="hidden" value="delete">
-            <button type='submit'>Remove This Client</button>
-        </form>
+        </div>
+        <div class='container'>
+            <h1>Hair Salon</h1>
+            <h2>Edit Client</h2>
+            <h2>{{ client.getName }}</h2>
+            <form action='/client/{{ client.getId }}' method='post'>
+                <input name="_method" type="hidden" value="patch">
+                <label for='name'>New Name:</label>
+                <input type='text' id='name' name='name'>
+                <button type='submit' class='btn btn-success'>Update</button>
+            </form>
+            <form action='/client/{{ client.getId }}' method='post'>
+                <input name="_method" type="hidden" value="delete">
+                <button type='submit' class='btn btn-danger'>Remove This Client</button>
+            </form>
+        </div>
     </body>
 </html>

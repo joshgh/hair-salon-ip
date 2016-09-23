@@ -17,13 +17,13 @@ _This web app allows a user to create a list of stylists at a hair salon and add
 * Visit localhost:8000 on your web browswer
 
 ## Database Setup
-  ### If database import does not work run the following SQL commands to recreate database
+  ### If unable to import database run the following SQL commands to recreate database
 
   * CREATE DATABASE hair_salon;
   * USE hair_salon;
   * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
   * CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
-
+  Then copy hair_salon structure to hair_salon_test
 
 ## Specifications
   |Behavior|Input|Output|
@@ -40,6 +40,7 @@ _This web app allows a user to create a list of stylists at a hair salon and add
 
 
 ## Known Bugs
+  SQL queries are not sanitized, will refactor project to use PDO prepared statements instead of directly inserting user input into queries. In current state project is vulnerable to SQL injection and some inputs will just cause query to fail.
 
 ## Support and contact details
 
