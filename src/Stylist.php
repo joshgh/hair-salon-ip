@@ -36,6 +36,12 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
+        function update($new_name)
+        {
+            $GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_name}' WHERE id = {$this->getId()};");
+            $this->name = $new_name;
+        }
+
         static function getAll()
         {
             $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
