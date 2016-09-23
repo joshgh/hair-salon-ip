@@ -18,13 +18,13 @@
                 <button type='submit' class='btn btn-danger'>Remove This Stylist</button>
             </form>
             {% if clients is not empty %}
-            <h3>Clients</h3>
-            <p>(click to edit)</p>
-            <ul>
-                {% for client in clients %}
-                    <li><a href='/client/edit/{{ client.getId }}'>{{ client.getName }}</a></li>
-                {% endfor %}
-            </ul>
+                <h3>Clients</h3>
+                <p>(click to edit)</p>
+                <ul>
+                    {% for client in clients %}
+                        <li><a href='/client/edit/{{ client.getId }}'>{{ client.getName }}</a></li>
+                    {% endfor %}
+                </ul>
             {% endif %}
             <form action='/stylist/{{ stylist.getId }}' method='post'>
                 <h4>Add a New Client</h4>
@@ -32,7 +32,6 @@
                 <input type='text' id='name' name='name'>
                 <button type='submit' class='btn btn-success'>Add</button>
             </form>
-
         </div>
     </body>
 </html>
