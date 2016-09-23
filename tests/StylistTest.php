@@ -60,5 +60,19 @@
 
             $this->assertEquals("Rita", $test_stylist->getName());
         }
+
+        function testDelete()
+        {
+            $test_stylist1 = new Stylist("Sandra");
+            $test_stylist1->save();
+            $test_stylist2 = new Stylist("Becky");
+            $test_stylist2->save();
+
+            $test_stylist1->delete();
+
+            $result = Stylist::find($test_stylist1->getId());
+
+            $this->assertEquals(null, $result);
+        }
     }
 ?>
