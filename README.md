@@ -18,7 +18,10 @@ _This web app allows a user to create a list of stylists at a hair salon and add
 
 ## Database Setup
   ### If database import does not work run the following SQL commands to recreate database
-  *
+
+  * CREATE DATABASE hair_salon;
+  * USE hair_salon;
+  * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
 
 
 ## Specifications
