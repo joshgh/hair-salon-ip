@@ -12,6 +12,7 @@
             <h1>Hair Salon</h1>
             {% if stylists is not empty %}
                 <h3>Stylists</h3>
+                <p>(click to view)</p>
                 <ul>
                     {% for stylist in stylists %}
                         <li><a href='/stylist/{{ stylist.getId }}'>{{ stylist.getName }}</a></li>

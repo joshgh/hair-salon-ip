@@ -12,9 +12,14 @@
         <div class='container'>
             <h1>Hair Salon</h1>
             <h2>{{ stylist.getName }} (Stylist)</h2>
+            <a href='/stylist/edit/{{ stylist.getId }}'><button type='button' class='btn btn-primary'>Edit this Stylist</button></a>
+            <form class="inline" action='/stylist/{{ stylist.getId }}' method='post'>
+                <input name="_method" type="hidden" value="delete">
+                <button type='submit' class='btn btn-danger'>Remove This Stylist</button>
+            </form>
             {% if clients is not empty %}
             <h3>Clients</h3>
-            <p>(Click to Edit)</p>
+            <p>(click to edit)</p>
             <ul>
                 {% for client in clients %}
                     <li><a href='/client/edit/{{ client.getId }}'>{{ client.getName }}</a></li>
@@ -27,11 +32,7 @@
                 <input type='text' id='name' name='name'>
                 <button type='submit' class='btn btn-success'>Add</button>
             </form>
-            <a href='/stylist/edit/{{ stylist.getId }}'><button type='button' class='btn btn-primary'>Edit this Stylist</button></a>
-            <form action='/stylist/{{ stylist.getId }}' method='post'>
-                <input name="_method" type="hidden" value="delete">
-                <button type='submit' class='btn btn-danger'>Remove This Stylist</button>
-            </form>
+
         </div>
     </body>
 </html>
